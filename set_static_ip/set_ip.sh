@@ -1,12 +1,13 @@
 #!/bin/bash
 echo "Set Static IP for Ubuntu Sever"
 echo "IPv4 address is 192.168.8.___"
+CONFIG_PATH=./01-network-manager-all.yaml
 
 read -p 'Host: ' HOST
 
 if [ $HOST -gt 1 ] && [ $HOST -lt 255 ]; then
-    sed -i "s/HOST_NUM/$HOST/g" 00-installer-config.yaml &&\
-    sudo mv ./01-network-manager-all.yaml /etc/netplan/ &&\
+    sed -i "s/HOST_NUM/$HOST/g" $CONFIG_PATH &&\
+    sudo mv $CONFIG_PATH /etc/netplan/ &&\
     sudo netplan apply &&\
     echo "IP Set Successfully!!!" &&\
     sleep 3

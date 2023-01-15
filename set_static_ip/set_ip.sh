@@ -6,7 +6,7 @@ read -p 'Host: ' HOST
 
 if [ $HOST -gt 1 ] && [ $HOST -lt 255 ]; then
     sed -i "s/HOST_NUM/$HOST/g" 00-installer-config.yaml &&\
-    sudo mv ./00-installer-config.yaml /etc/netplan/ &&\
+    sudo mv ./01-network-manager-all.yaml /etc/netplan/ &&\
     sudo netplan apply &&\
     echo "IP Set Successfully!!!" &&\
     sleep 3

@@ -1,4 +1,4 @@
-FONT=iskpota
+FONT=malithi
 
 sudo rm /usr/share/fonts/truetype/sinhala/*.ttf
 sudo cp ./fonts/$FONT.ttf /usr/share/fonts/truetype/sinhala/
